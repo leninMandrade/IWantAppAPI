@@ -13,7 +13,7 @@ public class QueryAllUsersWithClaimName
 		this.configuration = configuration;
 	}
 
-	public IEnumerable<EmployeeResponse> Execute(int page, int rows)
+	public async Task<IEnumerable<EmployeeResponse>> Execute(int page, int rows)
 	{
         var db = new SqlConnection(configuration["ConnectionString:IWantDb"]);
 
@@ -23,6 +23,6 @@ public class QueryAllUsersWithClaimName
             order by Name
             OFFSET (@page -1) * @rows ROWS FETCH NEXT @rows ROWS ONLY";
 
-        return db.Query<EmployeeResponse>(query, new { page, rows });
+        return await db.QueryAsync<EmployeeResponse>(query, new { page, rows });
     }
 }
