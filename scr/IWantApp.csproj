@@ -7,27 +7,29 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Using Include="Flunt.Notifications"/>
-		<Using Include="Microsoft.AspNetCore.Identity"/>
-		<Using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"/>
-		<Using Include="Microsoft.EntityFrameworkCore"/>
-		<Using Include="Microsoft.AspNetCore.Authentication.JwtBearer;"/>
-		<Using Include="Microsoft.AspNetCore.Authorization;"/>
-		<Using Include="Microsoft.IdentityModel.Tokens;"/>
-		<Using Include="System.Text;"/>
-		<Using Include="Flunt.Validations;"/>
-		<Using Include="System.Security.Claims;"/>
-		<Using Include="Microsoft.AspNetCore.Mvc;"/>
-		<Using Include="System.IdentityModel.Tokens.Jwt;"/>
-		<Using Include="Dapper;"/>
-		<Using Include="Microsoft.Data.SqlClient;"/>
-		<Using Include="Microsoft.AspNetCore.Diagnostics;"/>
+		<Using Include="Flunt.Notifications" />
+		<Using Include="Microsoft.AspNetCore.Identity" />
+		<Using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+		<Using Include="Microsoft.EntityFrameworkCore" />
+		<Using Include="Microsoft.AspNetCore.Authentication.JwtBearer;" />
+		<Using Include="Microsoft.AspNetCore.Authorization;" />
+		<Using Include="Microsoft.IdentityModel.Tokens;" />
+		<Using Include="System.Text;" />
+		<Using Include="Flunt.Validations;" />
+		<Using Include="System.Security.Claims;" />
+		<Using Include="Microsoft.AspNetCore.Mvc;" />
+		<Using Include="System.IdentityModel.Tokens.Jwt;" />
+		<Using Include="Dapper;" />
+		<Using Include="Microsoft.Data.SqlClient;" />
+		<Using Include="Microsoft.AspNetCore.Diagnostics;" />
+		<Using Include="Serilog;" />
+		<Using Include="Serilog.Sinks.MSSqlServer;" />
 
-		<Using Include="IWantApp.Domain.Products;"/>
-		<Using Include="IWantApp.Infra.Data;"/>
-		<Using Include="IWantApp.Endpoints.Categories;"/>
-		<Using Include="IWantApp.Endpoints.Employees;"/>
-		<Using Include="IWantApp.Endpoints.Security;"/>
+		<Using Include="IWantApp.Domain.Products;" />
+		<Using Include="IWantApp.Infra.Data;" />
+		<Using Include="IWantApp.Endpoints.Categories;" />
+		<Using Include="IWantApp.Endpoints.Employees;" />
+		<Using Include="IWantApp.Endpoints.Security;" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -41,6 +43,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+		<PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+		<PackageReference Include="Serilog.sinks.MSSqlServer" Version="6.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	</ItemGroup>
 

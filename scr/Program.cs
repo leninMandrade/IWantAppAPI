@@ -1,4 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseSerilog((context, configuration) =>
+{
+    configuration.WriteTo.Console().WriteTo.MSSqlServer(context.Configuration["ConnectionString:IWantDb"], sinkOptions: new MSSqlServerSinkOptions()
+    {
+        AutoCreateSqlTable = true,
+        TableName = "LogAPI"
+    });
+});
 builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["ConnectionString:IWantDb"]);
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
@@ -65,9 +73,9 @@ app.Map("/error", (HttpContext http) =>
 {
     var error = http.Features?.Get<IExceptionHandlerFeature>()?.Error;
 
-    if(error != null)
+    if (error != null)
     {
-        if(error is SqlException)
+        if (error is SqlException)
         {
             return Results.Problem(title: "Database Out", statusCode: 500);
         }
