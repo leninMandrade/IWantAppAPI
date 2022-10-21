@@ -25,12 +25,14 @@
 		<Using Include="Serilog;" />
 		<Using Include="Serilog.Sinks.MSSqlServer;" />
 
+		<Using Include="IWantApp.Domain.Users;" />
 		<Using Include="IWantApp.Domain.Products;" />
 		<Using Include="IWantApp.Infra.Data;" />
 		<Using Include="IWantApp.Endpoints.Categories;" />
 		<Using Include="IWantApp.Endpoints.Employees;" />
 		<Using Include="IWantApp.Endpoints.Security;" />
 		<Using Include="IWantApp.Endpoints.Products;" />
+		<Using Include="IWantApp.Endpoints.Clients;" />
 	</ItemGroup>
 
 	<ItemGroup>
